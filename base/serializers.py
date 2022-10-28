@@ -19,7 +19,7 @@ class PhotosSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Photos
-        fields = ['id', 'title', 'album', 'image_height', 'image_width', 'dominant_color', 'image_file']
+        fields = ['id', 'title', 'album','image_width', 'image_height', 'dominant_color', 'image_file']
         read_only_fields = [
             "image_width",
             "image_height",

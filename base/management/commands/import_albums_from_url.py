@@ -17,13 +17,10 @@ class Command(BaseCommand):
                 print(display_format.format(album))
         except Exception as ex:
             print(str(ex))
-            msg = "\n\nSomething went wrong saving this movie: {}\n{}".format(title, str(ex))
+            msg = "\n\nSomething went wrong saving this album: {}\n{}".format(title, str(ex))
             print(msg)
 
     def handle(self, *args, **options):
-        """
-        Makes a GET request to the API.
-        """
         headers = {'Content-Type': 'application/json'}
         response = requests.get(
             url=IMPORT_URL,

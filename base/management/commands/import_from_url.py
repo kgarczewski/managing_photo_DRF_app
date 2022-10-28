@@ -27,9 +27,6 @@ class Command(BaseCommand):
             print(msg)
 
     def handle(self, *args, **options):
-        """
-        Makes a GET request to the API.
-        """
         headers = {'Content-Type': 'application/json'}
         response = requests.get(
             url=IMPORT_URL,

@@ -6,16 +6,9 @@ from django.core.files import File
 from urllib.request import urlopen
 from tempfile import NamedTemporaryFile
 
-
-
 headers = {'User-Agent': 'Mozilla/5.0(Macintosh; Intel Mac OS X 10_15_2)'
                          'AppleWebKit/605.1.15 '
-                         '(X11; Linux i686; rv:106.0) (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15',
-       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-       'Accept-Encoding': 'none',
-       'Accept-Language': 'en-US,en;q=0.8',
-       'Connection': 'keep-alive'}
+                         '(X11; Linux i686; rv:106.0) (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15'}
 
 
 class Album(models.Model):
