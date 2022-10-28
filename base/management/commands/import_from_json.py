@@ -7,7 +7,7 @@ from managing_photos.settings import BASE_DIR
 
 class Command(BaseCommand):
     def photo_from_json(self):
-        data_folder = os.path.join(BASE_DIR, 'base', 'resources/json_file')
+        data_folder = os.path.join(BASE_DIR, 'base', 'resource/json_file')
         for data_file in os.listdir(data_folder):
             with open(os.path.join(data_folder, data_file), encoding='utf-8') as data_file:
                 data = json.loads(data_file.read())
