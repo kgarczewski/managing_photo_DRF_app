@@ -6,9 +6,7 @@ from django.core.files import File
 from urllib.request import urlopen
 from tempfile import NamedTemporaryFile
 
-headers = {'User-Agent': 'Mozilla/5.0(Macintosh; Intel Mac OS X 10_15_2)'
-                         'AppleWebKit/605.1.15 '
-                         '(X11; Linux i686; rv:106.0) (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15'}
+headers = {'User-Agent': 'Mozilla/5.0'}
 
 
 class Album(models.Model):
@@ -35,7 +33,7 @@ class Photos(models.Model):
             req = urllib.request.Request(self.image_url, headers=headers)
             img_temp.write(urlopen(req, timeout=10).read())
             img_temp.flush()
-            self.image_file.save(f"image_{self.pk}", File(img_temp))
+            self.image_file.save(f"image_{self.title}", File(img_temp))
         self.image_file.open()
         ct = ColorThief(self.image_file)
         dominant_c = ct.get_color(quality=1)
